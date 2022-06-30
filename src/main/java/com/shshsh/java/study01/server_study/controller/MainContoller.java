@@ -1,33 +1,30 @@
 package com.shshsh.java.study01.server_study.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
 
 import com.shshsh.java.study01.server_study.model.Book;
+import com.shshsh.java.study01.server_study.service.BookService;
+import com.shshsh.java.study01.server_study.mapper.BookMapper;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/service")
 public class MainContoller {
 
-    @RequestMapping(value = "/home")
-    public String home() {
-        return "home";
-    }
+    BookMapper bookMapper;
 
-    @RequestMapping(value = "/homeparty", method = RequestMethod.GET)
-    public String homeparty(String input) {
-        return "homeparty" + input;
-    }
+    @Autowired
+    BookService bookService = new BookService(bookMapper);
 
-    @RequestMapping(value = "/book", method = RequestMethod.GET)
-    public Book GetBookInfo() {
-        Book book = new Book();
-        book.setSeq(1);
-        book.setTitle("책 제목");
-        book.setPublisher("이상효");
-        book.setCreator("대한민국");
-        book.setPublishedYear(2022);
-        return book;
+    @RequestMapping(value = "/bookinfo", method = RequestMethod.GET)
+    public List<Book> GetBookList() {
+        List<Book> booklist = bookService.service_getBookList();
+
+        return booklist;
     }
 }

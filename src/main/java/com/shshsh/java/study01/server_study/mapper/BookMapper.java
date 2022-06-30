@@ -7,5 +7,5 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper {
-    List<Book> getBookList();
+    List<Book> mapper_getBookList();
 }

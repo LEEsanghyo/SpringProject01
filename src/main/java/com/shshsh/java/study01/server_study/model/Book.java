@@ -4,9 +4,7 @@ import lombok.Data;
 
 @Data
 public class Book {
-    private long seq;
-    private String title;
-    private String creator;
-    private String publisher;
-    private int publishedYear;
+    private String book_id;
+    private String book_name;
+    private String book_info;
 }
