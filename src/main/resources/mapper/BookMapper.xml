@@ -5,7 +5,7 @@
 
 <mapper namespace="com.shshsh.java.study01.server_study.mapper.BookMapper">
 
-    <select id="mapper_getBookList" resultType="Book">
+    <select id="getBookList" resultType="Book">
         select * from book
     </select>
 </mapper>

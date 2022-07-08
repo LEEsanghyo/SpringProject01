@@ -23,8 +23,9 @@ public class MainContoller {
 
     @RequestMapping(value = "/bookinfo", method = RequestMethod.GET)
     public List<Book> GetBookList() {
-        List<Book> booklist = bookService.service_getBookList();
+        List<Book> booklist = bookService.getBookList();
 
+        System.out.println("here1" + booklist.get(0));
         return booklist;
     }
 }
