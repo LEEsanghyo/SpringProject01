@@ -1,10 +1,11 @@
 package com.shshsh.java.study01.server_study.mapper;
 
-import com.shshsh.java.study01.server_study.model.Book;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.shshsh.java.study01.server_study.model.Book;
 
 @Repository
 @Mapper
